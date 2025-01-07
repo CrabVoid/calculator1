@@ -8,10 +8,10 @@
 <body>
     <h1>kalkulātors</h1>
     <br>
-    <input type="number" id="number1">
-    <input type="text" id="operator">
-    <input type="number" id="number2">
-    <button id="bttn">Aprēķināt</button>
+    <input type="text" id="number1" />
+    <input type="text" id="operator" />
+    <input type="text" id="number2" />
+    <button type="submit" id="bttn">Aprēķināt</button>
     <div id="output"></div>
 
     <script>
@@ -25,7 +25,30 @@
         btnInput.addEventListener("click", processInput);
 
         function processInput() {
-            console.log("clicked");
+            let num1Value = num1Input.value;
+            let num2Value = num2Input.value;
+            let operaValue = operaInput.value;
+
+            let result;
+            
+            switch (operaValue) {
+                case "+":
+                    result = num1Value + num2Value;
+                    break;
+                case "-":
+                    result = num1Value - num2Value;
+                    break;
+                case "*":
+                    result = num1Value * num2Value;
+                    break;
+                case "/":
+                    result = num1Value / num2Value;
+                    break;
+
+                default:
+                    break;
+            }
+            outputContainer.innerHTML = result;
         }
     </script>
 </body>
