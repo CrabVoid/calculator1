@@ -31,12 +31,15 @@
 
             let errorsArray = validateUserInput(num1Value, num2Value, operaValue);
             if (errorsArray.length > 0) {
-                outputContainer.innerHTML = errorsArray
-            } else {
+                outputContainer.innerHTML = htmlFormatedErrors(errorsArray)
+                return;
+            } 
+
+            
                 let result = calculateResult(num1Value, num2Value, operaValue);
                 outputContainer.innerHTML = result;
             }
-        }
+        
 
         function calculateResult(n1, n2, op) {
             let result;
@@ -68,6 +71,15 @@
             if (!["+", "-", "*", "/"].includes(op)) ary.push("operator error ")
 
             return ary;
+        }
+
+        function htmlFormatedErrors(errorsArray) {
+            let errorHTMLString = "";
+            for (let i = 0; i < errorsArray.length; i++) {
+                errorHTMLString += `<li>${errorArray[i]}</li>`;
+            }
+
+            return `<ul>${errorHTMLString}</ul>` ; 
         }
 
         
