@@ -35,7 +35,7 @@
                 return;
             } 
 
-            
+
                 let result = calculateResult(num1Value, num2Value, operaValue);
                 outputContainer.innerHTML = result;
             }
@@ -76,7 +76,7 @@
         function htmlFormatedErrors(errorsArray) {
             let errorHTMLString = "";
             for (let i = 0; i < errorsArray.length; i++) {
-                errorHTMLString += `<li>${errorArray[i]}</li>`;
+                errorHTMLString += `<li>${errorsArray[i]}</li>`;
             }
 
             return `<ul>${errorHTMLString}</ul>` ; 
