@@ -12,6 +12,7 @@
     <input type="text" id="operator" />
     <input type="text" id="number2" />
     <button type="submit" id="bttn">Aprēķināt</button>
+    <button type="button" id="clearBttn">Notīrīt</button>
     <div id="output"></div>
 
     <script>
@@ -19,10 +20,12 @@
         const num2Input = document.getElementById("number2");
         const operaInput = document.getElementById("operator");
         const btnInput = document.getElementById("bttn");
+        const clearBtn = document.getElementById("clearBttn");
         const outputContainer = document.getElementById("output");
 
         
         btnInput.addEventListener("click", processInput);
+        clearBtn.addEventListener("click", clearFields);
 
         function processInput() {
             let num1Value = parseFloat(num1Input.value);
@@ -82,7 +85,12 @@
             return `<ul>${errorHTMLString}</ul>` ; 
         }
 
-        
+        function clearFields() {
+            num1Input.value = "";
+            num2Input.value = "";
+            operaInput.value = "";
+            outputContainer.innerHTML = "";
+        }
             
     </script>
 </body>
