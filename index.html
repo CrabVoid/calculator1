@@ -30,7 +30,7 @@
             let operaValue = operaInput.value;
 
             let errorsArray = validateUserInput(num1Value, num2Value, operaValue);
-            if (errorsArray.lenght > 0) {
+            if (errorsArray.length > 0) {
                 outputContainer.innerHTML = errorsArray
             } else {
                 let result = calculateResult(num1Value, num2Value, operaValue);
@@ -63,9 +63,9 @@
         function validateUserInput(n1, n2, op) {
             let ary = [];
 
-            if (isNaN(n1)) ary.push("num1 error");
-            if (isNaN(n2)) ary.push("num2 error");
-            if (!["+", "-", "*", "/"].includes(op)) ary.push("opera error")
+            if (isNaN(n1)) ary.push("num1 error ");
+            if (isNaN(n2)) ary.push("num2 error ");
+            if (!["+", "-", "*", "/"].includes(op)) ary.push("operator error ")
 
             return ary;
         }
